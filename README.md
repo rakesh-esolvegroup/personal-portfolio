@@ -8,6 +8,8 @@ the supplied "Minimalist Monochrome Developer Portfolio" design.
 
 - Fully responsive: 4-column desktop grid → 2 → 1 column on mobile
 - Sticky header with scroll state, active section highlighting and a mobile menu
+- Contact popup: native `<dialog>` with blurred backdrop, focus trapping, Esc /
+  backdrop / X to close, and a front-end-only form ready for an endpoint
 - Scroll-reveal animations and animated skill bars (respects `prefers-reduced-motion`)
 - Hand-built project thumbnails (no screenshot assets required)
 - Accessible: semantic landmarks, skip link, focus states, ARIA labels, alt text
@@ -25,13 +27,15 @@ portfolio/
 │   ├── css/
 │   │   └── input.css           # Tailwind layers + component styles
 │   └── js/
-│       └── main.js             # Header, menu, reveals, skill bars
+│       └── main.js             # Header, menu, reveals, skill bars, contact dialog
 ├── dist/
 │   └── css/
 │       └── style.css           # Compiled stylesheet (generated)
 ├── assets/
 │   └── images/
-│       ├── building.jpg        # Hero photograph
+│       ├── dev-boy.png         # Hero illustration
+│       ├── hello-envelope.png  # Contact popup artwork (transparent PNG)
+│       ├── building.jpg        # Alternate hero photograph (unused)
 │       └── favicon.svg
 └── README.md
 ```
@@ -74,9 +78,21 @@ Typeface: **Inter** (Google Fonts) with a system sans-serif fallback.
   percentage only requires editing that value.
 - **Project links** — the three cards currently point at `#projects`; replace each
   `href` with the live project or case-study URL.
-- **Hero image** — swap `assets/images/building.jpg` (recommended 920 × 584, landscape).
-  The artwork sits on a circular disc using `mix-blend-mode: darken`, so a photo with
-  a light, uncluttered sky works best.
+- **Contact form** — the popup is front-end only by default (it validates, fakes a
+  short send, then shows the success panel). To receive real messages, add an
+  endpoint to the form in `index.html`:
+
+  ```html
+  <form class="contact-form" data-contact-form novalidate
+        data-endpoint="https://formspree.io/f/your-id">
+  ```
+
+  The script POSTs `FormData` to that URL and shows the error line if the request
+  fails. Any endpoint that accepts a form POST (Formspree, Netlify Forms, your own
+  API) works — no other code changes needed.
+- **Hero image** — swap `assets/images/dev-boy.png` (square-ish illustration on a
+  transparent background works best). `assets/images/building.jpg` is kept as an
+  unused alternative photo.
 
 ## Credits
 
