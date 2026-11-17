@@ -72,7 +72,12 @@
       });
 
       // Bottom of the page always highlights the last section.
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 8) {
+      const pageIsScrollable =
+        document.body.offsetHeight > window.innerHeight + 16;
+      if (
+        pageIsScrollable &&
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 8
+      ) {
         current = sections[sections.length - 1];
       }
 
@@ -134,6 +139,128 @@
 
       skillObserver.observe(skills);
     }
+  }
+
+  /* ---------- Contact dialog ---------- */
+  const contactDialog = document.querySelector("[data-contact-dialog]");
+  const contactOpeners = document.querySelectorAll("[data-contact-open]");
+
+  if (
+    contactDialog &&
+    contactOpeners.length &&
+    typeof contactDialog.showModal === "function"
+  ) {
+    const panel = contactDialog.querySelector(".contact-dialog__panel");
+    const form = contactDialog.querySelector("[data-contact-form]");
+    const success = contactDialog.querySelector("[data-contact-success]");
+    const error = contactDialog.querySelector("[data-contact-error]");
+    const submit = contactDialog.querySelector("[data-contact-submit]");
+    const submitLabel = contactDialog.querySelector("[data-contact-submit-label]");
+    const contactNav = document.querySelector('.nav-link[href="#contact"]');
+
+    let lastTrigger = null;
+    let scrollbarPad = 0;
+
+    const lockScroll = () => {
+      scrollbarPad = window.innerWidth - document.documentElement.clientWidth;
+      if (scrollbarPad > 0) {
+        document.body.style.paddingRight = `${scrollbarPad}px`;
+      }
+      document.body.style.overflow = "hidden";
+    };
+
+    const unlockScroll = () => {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      scrollbarPad = 0;
+    };
+
+    const openContact = (event) => {
+      event.preventDefault();
+      lastTrigger = event.currentTarget;
+
+      form.hidden = false;
+      success.hidden = true;
+      error.hidden = true;
+      submit.disabled = false;
+      submitLabel.textContent = "Send a little hello";
+
+      contactDialog.showModal();
+      lockScroll();
+      panel.scrollTop = 0;
+
+      navLinks.forEach((link) =>
+        link.classList.toggle("is-active", link === contactNav)
+      );
+    };
+
+    const closeContact = () => {
+      if (contactDialog.open) contactDialog.close();
+    };
+
+    contactOpeners.forEach((opener) =>
+      opener.addEventListener("click", openContact)
+    );
+
+    contactDialog
+      .querySelectorAll("[data-contact-close]")
+      .forEach((button) => button.addEventListener("click", closeContact));
+
+    contactDialog.addEventListener("click", (event) => {
+      if (event.target === contactDialog) closeContact();
+    });
+
+    contactDialog.addEventListener("close", () => {
+      unlockScroll();
+      if (lastTrigger) lastTrigger.focus({ preventScroll: true });
+      lastTrigger = null;
+      window.dispatchEvent(new Event("scroll"));
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      error.hidden = true;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submit.disabled = true;
+      submitLabel.textContent = "Sending…";
+
+      const endpoint = form.dataset.endpoint;
+
+      try {
+        if (endpoint) {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form),
+          });
+          if (!response.ok) throw new Error("Request failed");
+        } else {
+          // Demo mode — no endpoint configured yet.
+          await new Promise((resolve) => setTimeout(resolve, 650));
+        }
+
+        form.reset();
+        form.hidden = true;
+        success.hidden = false;
+        panel.scrollTop = 0;
+
+        window.requestAnimationFrame(() => {
+          success.querySelector("button")?.focus({ preventScroll: true });
+        });
+      } catch (err) {
+        error.textContent =
+          "Something went wrong — please try again in a moment.";
+        error.hidden = false;
+      } finally {
+        submit.disabled = false;
+        submitLabel.textContent = "Send a little hello";
+      }
+    });
   }
 
   /* ---------- Footer year ---------- */

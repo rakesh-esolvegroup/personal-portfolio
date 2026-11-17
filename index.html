@@ -49,7 +49,7 @@
             <a href="#home" class="nav-link is-active" data-nav>Home</a>
             <a href="#about" class="nav-link" data-nav>About</a>
             <a href="#projects" class="nav-link" data-nav>Projects</a>
-            <a href="#contact" class="nav-link" data-nav>Contact</a>
+            <a href="#contact" class="nav-link" data-nav data-contact-open>Contact</a>
           </nav>
 
           <a
@@ -103,7 +103,7 @@
             Projects
             <span aria-hidden="true">↗</span>
           </a>
-          <a href="#contact" class="mobile-link border-b-0" data-mobile-link>
+          <a href="#contact" class="mobile-link border-b-0" data-mobile-link data-contact-open>
             Contact
             <span aria-hidden="true">↗</span>
           </a>
@@ -144,7 +144,7 @@
                 </svg>
               </a>
 
-              <a href="#contact" class="link-underline">Contact Me</a>
+              <a href="#contact" class="link-underline" data-contact-open>Contact Me</a>
             </div>
           </div>
 
@@ -683,6 +683,153 @@
         </div>
       </div>
     </footer>
+
+    <!-- ================= Contact dialog ================= -->
+    <dialog
+      id="contact-dialog"
+      class="contact-dialog"
+      aria-labelledby="contact-title"
+      data-contact-dialog
+    >
+      <div class="contact-dialog__panel">
+        <button
+          type="button"
+          class="contact-dialog__close"
+          aria-label="Close contact form"
+          data-contact-close
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+
+        <img
+          class="contact-dialog__art"
+          src="./assets/images/hello-envelope.png"
+          alt=""
+          width="920"
+          height="480"
+        />
+
+        <h2 id="contact-title" class="contact-dialog__title">A little hello?</h2>
+
+        <p class="contact-dialog__lede">
+          Big idea or small question, I&rsquo;m all ears.
+        </p>
+
+        <!--
+          Front-end only for now: add your form endpoint (Formspree, Netlify
+          Forms, your own API, …) to data-endpoint to send real messages.
+        -->
+        <form class="contact-form" data-contact-form novalidate>
+          <div class="contact-form__row">
+            <div class="field">
+              <label class="field__label" for="contact-name">Name</label>
+              <input
+                class="field__input"
+                id="contact-name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="contact-email">Email</label>
+              <input
+                class="field__input"
+                id="contact-email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field contact-form__message">
+            <label class="field__label" for="contact-message">Message</label>
+            <textarea
+              class="field__input field__textarea"
+              id="contact-message"
+              name="message"
+              rows="4"
+              placeholder="Tell me what&rsquo;s on your mind..."
+              required
+            ></textarea>
+          </div>
+
+          <p class="contact-form__error" data-contact-error role="alert" hidden>
+            Please add your name, a valid email and a message.
+          </p>
+
+          <button type="submit" class="contact-form__submit" data-contact-submit>
+            <span data-contact-submit-label>Send a little hello</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21.5 2.5 10.5 13.5" />
+              <path d="M21.5 2.5 15 21.5l-4.5-8-8-4.5 19-6.5Z" />
+            </svg>
+          </button>
+
+          <p class="contact-form__note">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+            Usually replies within 1&ndash;2 days
+          </p>
+        </form>
+
+        <div class="contact-success" data-contact-success hidden>
+          <span class="contact-success__mark" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m5 12.5 4.5 4.5L19 7" />
+            </svg>
+          </span>
+          <p class="contact-success__title">Message sent</p>
+          <p class="contact-success__text">
+            Thanks for reaching out &mdash; I&rsquo;ll get back to you within
+            1&ndash;2 days.
+          </p>
+          <button type="button" class="contact-success__btn" data-contact-close>
+            Close
+          </button>
+        </div>
+      </div>
+    </dialog>
 
     <script src="./src/js/main.js" defer></script>
   </body>
