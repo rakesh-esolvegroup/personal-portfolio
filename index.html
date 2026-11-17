@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en" class="no-js scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rakesh Molla — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Rakesh Molla is a frontend developer who turns ideas into clean, fast and accessible web experiences."
+    />
+    <meta name="theme-color" content="#F7F7F6" />
+    <meta property="og:title" content="Rakesh Molla — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="A frontend developer who turns ideas into clean, fast and accessible web experiences."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/css/style.css" />
+
+    <script>
+      document.documentElement.classList.remove("no-js");
+    </script>
+  </head>
+
+  <body class="bg-paper text-ink">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-[110] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:text-paper"
+      >Skip to content</a
+    >
+
+    <!-- ================= Header ================= -->
+    <header class="site-header" data-header>
+      <div class="container-page">
+        <div class="flex items-center gap-6 pb-4 pt-9 lg:gap-8">
+          <a href="#home" class="logo" aria-label="Rakesh Molla — home">RM</a>
+
+          <span class="hidden h-px flex-1 bg-line sm:block" aria-hidden="true"></span>
+
+          <nav class="ml-auto hidden items-center gap-9 md:flex" aria-label="Primary">
+            <a href="#home" class="nav-link is-active" data-nav>Home</a>
+            <a href="#about" class="nav-link" data-nav>About</a>
+            <a href="#projects" class="nav-link" data-nav>Projects</a>
+            <a href="#contact" class="nav-link" data-nav>Contact</a>
+          </nav>
+
+          <a
+            href="#stats"
+            class="icon-btn ml-1 hidden md:grid"
+            aria-label="Scroll to highlights"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-[15px] w-[15px]"
+              aria-hidden="true"
+            >
+              <path d="M12 4v15" />
+              <path d="m6.5 13.5 5.5 5.5 5.5-5.5" />
+            </svg>
+          </a>
+
+          <button
+            type="button"
+            class="ml-auto grid h-9 w-9 place-items-center rounded-full border border-ink md:hidden"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Open menu"
+            data-menu-btn
+          >
+            <span class="flex w-[15px] flex-col gap-[5px]" aria-hidden="true">
+              <span class="bar block h-px w-full bg-ink"></span>
+              <span class="bar block h-px w-full bg-ink"></span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile navigation -->
+      <div id="mobile-menu" class="hidden border-t border-line bg-paper md:hidden" data-menu-panel>
+        <nav class="container-page py-2" aria-label="Mobile">
+          <a href="#home" class="mobile-link" data-mobile-link>
+            Home
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href="#about" class="mobile-link" data-mobile-link>
+            About
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href="#projects" class="mobile-link" data-mobile-link>
+            Projects
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href="#contact" class="mobile-link border-b-0" data-mobile-link>
+            Contact
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= Hero ================= -->
+      <section id="home" class="relative">
+        <div class="container-page relative pb-8 pt-2 lg:pb-[47px] lg:pt-3">
+          <div class="relative z-20 max-w-[620px] lg:pt-10">
+            <p class="eyebrow">Hi, I'm</p>
+
+            <h1 class="hero-title mt-3">Rakesh Molla</h1>
+
+            <p
+              class="mt-2 max-w-[472px] text-[16.5px] leading-[26px] text-[#5f5f5b] sm:text-[17.5px]"
+            >
+              A Frontend Developer who turns<br class="hidden sm:block" />
+              ideas into clean, fast and accessible web experiences.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6 sm:mt-9">
+              <a href="#projects" class="btn-pill">
+                View My Work
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </a>
+
+              <a href="#contact" class="link-underline">Contact Me</a>
+            </div>
+          </div>
+
+          <!-- Hero artwork -->
+          <div
+            class="hero-visual mx-auto mt-12 h-[262px] w-full max-w-[460px] sm:h-[310px] lg:absolute lg:right-[60px] lg:top-0 lg:mt-0 lg:h-[292px] lg:w-[460px] lg:max-w-none"
+          >
+            <div class="hero-frame">
+              <div class="hero-circle" aria-hidden="true"></div>
+              <img
+                src="./assets/images/dev-boy.png"
+                alt="A cartoon illustration of a man sitting on a chair and working on a laptop"
+                class="hero-photo"
+                width="920"
+                height="584"
+                fetchpriority="high"
+              />
+            </div>
+
+            <svg
+              class="hero-sparkle"
+              viewBox="0 0 40 40"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M20 0c1.9 12.2 7.9 18.1 20 20-12.1 1.9-18.1 7.8-20 20-1.9-12.2-7.9-18.1-20-20C12.1 18.1 18.1 12.2 20 0Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Stats ================= -->
+      <section id="stats" class="container-page" aria-label="Highlights">
+        <div class="stats">
+          <div>
+            <p class="stat-number">3+</p>
+            <p class="stat-label">Years Experience</p>
+          </div>
+          <div>
+            <p class="stat-number">10+</p>
+            <p class="stat-label">Projects Completed</p>
+          </div>
+          <div>
+            <p class="stat-number">5+</p>
+            <p class="stat-label">Happy Clients</p>
+          </div>
+          <div>
+            <p class="stat-number">100%</p>
+            <p class="stat-label">Dedication</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= About ================= -->
+      <section id="about" class="container-page pt-14 lg:pt-[66px]">
+        <div class="grid gap-14 lg:grid-cols-12 lg:gap-8">
+          <!-- Intro -->
+          <div class="reveal lg:col-span-4">
+            <div class="label-row">
+              About Me  
+            </div>
+
+            <h2 class="h-section-lg mt-3 max-w-[352px]">
+              Building digital<br class="hidden sm:inline" />
+              experiences with<br class="hidden sm:inline" />
+              purpose.
+            </h2>
+
+            <p class="text-body mt-[18px] max-w-[332px]">
+              I'm a passionate developer who loves solving problems, writing clean
+              code, and creating user-friendly products.
+            </p>
+
+            <a href="#contact" class="link-arrow mt-[30px]">
+              Learn More
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 12h15" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Venn diagram -->
+          <div class="reveal flex items-start justify-center lg:col-span-4 lg:-mt-5">
+            <div class="venn" role="img" aria-label="Development, problem solving and innovation">
+              <div class="venn-circle venn-circle--top">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m7.5 8-4 4 4 4" />
+                  <path d="m16.5 8 4 4-4 4" />
+                  <path d="m13.6 5.5-3.2 13" />
+                </svg>
+                <span>Development</span>
+              </div>
+
+              <div class="venn-circle venn-circle--left">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18h6" />
+                  <path d="M10 21h4" />
+                  <path d="M12 3a6 6 0 0 0-3.6 10.8c.6.5.9 1.1.9 1.8v.4h5.4v-.4c0-.7.3-1.3.9-1.8A6 6 0 0 0 12 3Z" />
+                </svg>
+                <span class="text-center">Problem<br />Solving</span>
+              </div>
+
+              <div class="venn-circle venn-circle--right">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.7-2-.7-2.8-.2Z" />
+                  <path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.6 12.6 0 0 1 22 2c0 2.7-.9 7.5-6 11a22 22 0 0 1-4 2Z" />
+                  <path d="M9 12H4s.5-2.8 2-4c1.7-1.3 5 0 5 0" />
+                  <path d="M12 15v5s2.8-.5 4-2c1.3-1.7 0-5 0-5" />
+                </svg>
+                <span>Innovation</span>
+              </div>
+
+              <span class="venn-core" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="reveal lg:col-span-4 lg:-mt-[6px]">
+            <div class="label-row">
+              My Skills
+              <span class="rule w-8 sm:w-8" aria-hidden="true"></span>
+            </div>
+
+            <div class="skills mt-[30px]" data-skills>
+              <div class="skill">
+                <span class="skill-name">React.js</span>
+                <span class="skill-track">
+                  <span class="skill-fill" style="--level: 90%"></span>
+                </span>
+                <span class="skill-value">90%</span>
+              </div>
+
+              <div class="skill">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-track">
+                  <span class="skill-fill" style="--level: 85%"></span>
+                </span>
+                <span class="skill-value">85%</span>
+              </div>
+
+              <div class="skill">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-track">
+                  <span class="skill-fill" style="--level: 80%"></span>
+                </span>
+                <span class="skill-value">80%</span>
+              </div>
+
+              <div class="skill">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-track">
+                  <span class="skill-fill" style="--level: 75%"></span>
+                </span>
+                <span class="skill-value">75%</span>
+              </div>
+
+              <div class="skill">
+                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-track">
+                  <span class="skill-fill" style="--level: 70%"></span>
+                </span>
+                <span class="skill-value">70%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Projects ================= -->
+      <section id="projects" class="container-page pt-12 lg:pt-[47px]">
+        <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+          <div class="reveal">
+            <div class="label-row">
+              Selected Projects
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+
+            <h2 class="h-section mt-[7px]">Some of my recent work.</h2>
+          </div>
+
+          <a href="#projects" class="link-arrow reveal pb-1">
+            View All Projects
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 12h15" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="mt-4 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- 01 — Analytics dashboard -->
+          <article class="project-card reveal">
+            <a
+              href="#projects"
+              class="block"
+              aria-label="View the Analytics Dashboard project"
+            >
+              <div class="thumb">
+                <div class="thumb-inner mini-dash" aria-hidden="true">
+                  <div class="mini-dash__side">
+                    <div class="mini-dash__brand">
+                      <span class="mini-dash__dot"></span>
+                      Rakesh
+                    </div>
+
+                    <div class="mini-dash__group">
+                      <div class="mini-dash__item is-active"><span></span>Dashboard</div>
+                      <div class="mini-dash__item"><span></span>Analytics</div>
+                      <div class="mini-dash__item"><span></span>Reports</div>
+                      <div class="mini-dash__item"><span></span>Clients</div>
+                      <div class="mini-dash__item"><span></span>Wallet</div>
+                      <div class="mini-dash__item"><span></span>Settings</div>
+                    </div>
+                  </div>
+
+                  <div class="mini-dash__main">
+                    <div class="mini-dash__top">
+                      <span>Dashboard</span>
+                      <span class="mini-pill">Jan 01 — Jan 30</span>
+                    </div>
+
+                    <div class="mini-dash__head">
+                      <div>
+                        <strong>Dashboard Overview</strong>
+                        <em>Real-time performance insights</em>
+                      </div>
+                      <span class="mini-btn">Export</span>
+                    </div>
+
+                    <div class="mini-dash__grid">
+                      <div class="mini-panel">
+                        <div class="mini-panel__row">
+                          <span>Revenue Overview</span>
+                          <em>$24,780</em>
+                        </div>
+                        <div class="mini-chart">
+                          <span style="height: 42%"></span>
+                          <span style="height: 68%"></span>
+                          <span style="height: 34%"></span>
+                          <span style="height: 82%"></span>
+                          <span style="height: 52%"></span>
+                          <span style="height: 94%"></span>
+                          <span style="height: 60%"></span>
+                          <span style="height: 76%"></span>
+                          <span style="height: 44%"></span>
+                        </div>
+                      </div>
+
+                      <div class="mini-panel">
+                        <div class="mini-panel__row">
+                          <span>Total Users</span>
+                          <em>1,204</em>
+                        </div>
+                        <div class="mini-donut"></div>
+                      </div>
+                    </div>
+
+                    <div class="mini-panel mini-panel--wide">
+                      <div class="mini-panel__row">
+                        <span>Recent Transactions</span>
+                        <em>View all</em>
+                      </div>
+                      <div class="mini-row">
+                        <span class="mini-avatar"></span>
+                        <span>Olivia Martin</span>
+                        <em>+$1,240</em>
+                      </div>
+                      <div class="mini-row">
+                        <span class="mini-avatar"></span>
+                        <span>Noah Williams</span>
+                        <em>+$860</em>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="project-title">Analytics Dashboard</h3>
+                  <p class="project-desc">A modern dashboard for data insights.</p>
+                </div>
+                <svg
+                  class="project-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </div>
+            </a>
+          </article>
+
+          <!-- 02 — Task manager -->
+          <article class="project-card reveal">
+            <a
+              href="#projects"
+              class="block"
+              aria-label="View the Task Manager project"
+            >
+              <div class="thumb">
+                <div class="thumb-inner mini-task" aria-hidden="true">
+                  <div class="mini-task__bar">
+                    <div class="mini-task__logo"><i></i>TaskFlow</div>
+                    <div class="mini-task__nav">
+                      <span>Overview</span>
+                      <span>Projects</span>
+                      <span>Reports</span>
+                    </div>
+                  </div>
+
+                  <div class="mini-task__card">
+                    <div class="mini-task__side">
+                      <strong>Workspace</strong>
+                      <em>Overview</em>
+                      <em>My Tasks</em>
+                      <em>In Progress</em>
+                      <em>Completed</em>
+                    </div>
+
+                    <div class="mini-task__main">
+                      <div class="mini-task__head">
+                        <span>Projects</span>
+                        <span class="mini-badge">+ New</span>
+                      </div>
+
+                      <div class="mini-task__cols">
+                        <span>Task</span>
+                        <span>Due date</span>
+                        <span>Status</span>
+                        <span>Priority</span>
+                      </div>
+
+                      <div class="mini-task__row">
+                        <b><i></i>Website Redesign</b>
+                        <span>Sep 24</span>
+                        <span class="mini-badge">In progress</span>
+                        <span class="mini-badge mini-badge--dark">High</span>
+                      </div>
+                      <div class="mini-task__row">
+                        <b><i></i>Design System</b>
+                        <span>Sep 28</span>
+                        <span class="mini-badge">Review</span>
+                        <span class="mini-badge">Medium</span>
+                      </div>
+                      <div class="mini-task__row">
+                        <b><i></i>Mobile App</b>
+                        <span>Oct 02</span>
+                        <span class="mini-badge">In progress</span>
+                        <span class="mini-badge mini-badge--dark">High</span>
+                      </div>
+                      <div class="mini-task__row">
+                        <b><i></i>Marketing Site</b>
+                        <span>Oct 08</span>
+                        <span class="mini-badge">Completed</span>
+                        <span class="mini-badge">Low</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="project-title">Task Manager</h3>
+                  <p class="project-desc">Keep your tasks organized and focused.</p>
+                </div>
+                <svg
+                  class="project-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </div>
+            </a>
+          </article>
+
+          <!-- 03 — Landing page -->
+          <article class="project-card reveal">
+            <a
+              href="#projects"
+              class="block"
+              aria-label="View the Landing Page project"
+            >
+              <div class="thumb">
+                <div class="thumb-inner mini-hero" aria-hidden="true">
+                  <h3>Build Something<br />Amazing</h3>
+                  <p>
+                    Launch your product with a landing page that feels as sharp as
+                    your idea.
+                  </p>
+                  <div class="mini-hero__shapes">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="project-title">Landing Page</h3>
+                  <p class="project-desc">A minimal landing page for modern brands.</p>
+                </div>
+                <svg
+                  class="project-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 12h15" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer id="contact" class="container-page mt-[52px] border-t border-line pb-[14px] pt-2">
+      <div
+        class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"
+      >
+        <p class="text-[11px] leading-none text-mute">
+          <span class="font-semibold text-ink">Rakesh Molla</span>
+          <span class="ml-2.5"
+            >© <span data-year>2026</span>. All rights reserved.</span
+          >
+        </p>
+
+        <div class="flex items-center gap-4">
+          <a
+            href="https://github.com/rakesh-esolvegroup"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.96 3.22 9.17 7.69 10.66.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.78.54a11.25 11.25 0 0 0 7.68-10.66C23.25 5.48 18.27.5 12 .5Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/rakesh-molla-6b7ba1240"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.55V9h3.57v11.45Z"
+              />
+            </svg>
+          </a>
+
+          <a
+            href="https://x.com/"
+            class="social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter)"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.5 22H3.4l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 18.13h1.72L7.28 3.78H5.44l12.36 16.35Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./src/js/main.js" defer></script>
+  </body>
+</html>
